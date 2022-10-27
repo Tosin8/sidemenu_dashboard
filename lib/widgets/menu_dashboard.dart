@@ -12,8 +12,8 @@ class MenuDashboard extends StatefulWidget {
 }
 
 class _MenuDashboardState extends State<MenuDashboard> {
-  bool isCollapsed = true;
-  
+ 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
