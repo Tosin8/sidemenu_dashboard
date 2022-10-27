@@ -4,9 +4,16 @@ import 'package:sidemenu_dashboard/widgets/constant.dart';
 import 'dashboard_menu.dart';
 import 'nav_menu.dart';
 
-class MenuDashboard extends StatelessWidget {
+class MenuDashboard extends StatefulWidget {
   const MenuDashboard({super.key});
 
+  @override
+  State<MenuDashboard> createState() => _MenuDashboardState();
+}
+
+class _MenuDashboardState extends State<MenuDashboard> {
+  bool isCollapsed = true;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
