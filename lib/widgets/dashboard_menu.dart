@@ -9,10 +9,22 @@ class dashboard extends StatefulWidget {
   State<dashboard> createState() => _dashboardState();
 }
 
-class _dashboardState extends State<dashboard> {
+class _dashboardState extends State<dashboard>  with SingleTickerProviderStateMixin{
   bool isCollapsed = true;
   late double screenWidth, screenHeight;
   final Duration duration = const Duration(milliseconds: 300);
+
+  
+  @override
+  void initState() {
+    super.initState();
+    
+  }
+
+  @override 
+  void dispose() {
+    super.dispose(); 
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -30,7 +42,7 @@ class _dashboardState extends State<dashboard> {
           elevation: 5,
           color: backgroundColor,
           child: Container(
-            padding: const EdgeInsets.only(left: 16, right: 16, top: 40),
+            padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
             child: Column(
               children: [
                 Row(
@@ -52,7 +64,7 @@ class _dashboardState extends State<dashboard> {
                     const Icon(Icons.settings, color: Colors.white),
                   ],
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 SizedBox(
                   height: 200,
                   child: PageView(
