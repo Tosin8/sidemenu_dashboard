@@ -15,12 +15,22 @@ class _dashboardState extends State<dashboard> {
     return Material(
         elevation: 8,
         color: backgroundColor,
-        child: Column(
-          children: [
-            Row(
-              children: const [],
-            )
-          ],
+        child: Container(
+          padding: const EdgeInsets.only(left: 16, right: 16, top: 40),
+          child: Column(
+            children: [
+              Row(
+                children: const [
+                  Icon(Icons.menu, color: Colors.white),
+                  Text(
+                    'My Cards',
+                    style: TextStyle(fontSize: 24, color: Colors.white),
+                  ),
+                  Icon(Icons.settings, color: Colors.white),
+                ],
+              )
+            ],
+          ),
         ));
   }
 }
