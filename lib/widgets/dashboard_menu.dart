@@ -16,12 +16,15 @@ class _dashboardState extends State<dashboard>
   final Duration duration = const Duration(milliseconds: 300);
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
-
+  late Animation<Offset> _slideAnimation;
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this, duration: duration);
     _scaleAnimation = Tween<double>(begin: 1, end: 0.6).animate(_controller);
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(-1, 0), end: const Offset(0, 0))
+            .animate(_controller);
   }
 
   @override
