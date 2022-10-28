@@ -55,64 +55,83 @@ class _dashboardState extends State<dashboard>
             // Alternatively written : borderRadius: BorderRadius.all(Radius.circular(40)),
             elevation: 5,
             color: backgroundColor,
-            child: Container(
-              padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      InkWell(
-                        child: const Icon(Icons.menu, color: Colors.white),
-                        onTap: () {
-                          setState(() {
-                            if (isCollapsed) {
-                              _controller.forward();
-                            } else {
-                              _controller.reverse();
-                            }
-                            isCollapsed = !isCollapsed;
-                          });
-                        },
-                      ),
-                      const Text(
-                        'My Cards',
-                        style: TextStyle(fontSize: 24, color: Colors.white),
-                      ),
-                      const Icon(Icons.settings, color: Colors.white),
-                    ],
-                  ),
-                  const SizedBox(height: 30),
-                  SizedBox(
-                    height: 200,
-                    child: PageView(
-                      controller: PageController(viewportFraction: 0.8),
-                      scrollDirection: Axis.horizontal,
-                      pageSnapping: true,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              physics: const ClampingScrollPhysics(),
+              child: Container(
+                padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 8),
-                          color: Colors.redAccent,
-                          width: 100,
+                        InkWell(
+                          child: const Icon(Icons.menu, color: Colors.white),
+                          onTap: () {
+                            setState(() {
+                              if (isCollapsed) {
+                                _controller.forward();
+                              } else {
+                                _controller.reverse();
+                              }
+                              isCollapsed = !isCollapsed;
+                            });
+                          },
                         ),
-                        Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 8),
-                          color: Colors.blueAccent,
-                          width: 100,
+                        const Text(
+                          'My Cards',
+                          style: TextStyle(fontSize: 24, color: Colors.white),
                         ),
-                        Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 8),
-                          color: Colors.greenAccent,
-                          width: 100,
-                        ),
+                        const Icon(Icons.settings, color: Colors.white),
                       ],
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                  const Text('Transaction'),
-                  const SizedBox(height: 5),
-                ],
+                    const SizedBox(height: 30),
+                    SizedBox(
+                      height: 200,
+                      child: PageView(
+                        controller: PageController(viewportFraction: 0.8),
+                        scrollDirection: Axis.horizontal,
+                        pageSnapping: true,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 8),
+                            color: Colors.redAccent,
+                            width: 100,
+                          ),
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 8),
+                            color: Colors.blueAccent,
+                            width: 100,
+                          ),
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 8),
+                            color: Colors.greenAccent,
+                            width: 100,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    const Text('Transaction',
+                        style: TextStyle(fontSize: 20, color: Colors.white)),
+                    const SizedBox(height: 5),
+                    ListView.separated(
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return const ListTile(
+                            title: Text('Macbook'),
+                            subtitle: Text('Apple'),
+                            trailing: Text('-2000'),
+                          );
+                        },
+                        separatorBuilder: (context, index) {
+                          return const Divider(height: 12);
+                        },
+                        itemCount: 10)
+                  ],
+                ),
               ),
             )),
       ),
