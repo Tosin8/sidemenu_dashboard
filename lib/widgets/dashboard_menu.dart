@@ -27,7 +27,7 @@ class _dashboardState extends State<dashboard>
         Tween<Offset>(begin: const Offset(-1, 0), end: const Offset(0, 0))
             .animate(_controller);
     _menuScaleAnimation =
-        Tween<double>(begin: 1, end: 0.6).animate(_controller);
+        Tween<double>(begin: 0.5, end: 1).animate(_controller);
   }
 
   @override
