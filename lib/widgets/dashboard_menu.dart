@@ -108,7 +108,10 @@ class _dashboardState extends State<dashboard>
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 20),
+                  const Text('Transaction'),
+                  const SizedBox(height: 5),
                 ],
               ),
             )),
