@@ -27,9 +27,11 @@ class _navmenuState extends State<navmenu> {
               children: const [
 
                 CircleAvatar(
-                  backgroundImage: NetWorkImage('https://unsplash.com/photos/mEZ3PoFGs_k'), 
+                  backgroundImage: NetworkImage('https://unsplash.com/photos/mEZ3PoFGs_k'), 
 
                 ), 
+
+                Divider(), 
               
                 Text(
                   'Dashboard',
@@ -55,6 +57,9 @@ class _navmenuState extends State<navmenu> {
                   'Branches',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
+                SizedBox(height: 8), 
+                Text('Exit', style: TextStyle(color: Colors.white, fontSize: 20), 
+                ), 
               ],
             ),
           ),
