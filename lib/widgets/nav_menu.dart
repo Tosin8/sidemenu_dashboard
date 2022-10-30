@@ -25,6 +25,12 @@ class _navmenuState extends State<navmenu> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
+
+                CircleAvatar(
+                  backgroundImage: NetWorkImage('https://unsplash.com/photos/mEZ3PoFGs_k'), 
+
+                ), 
+              
                 Text(
                   'Dashboard',
                   style: TextStyle(color: Colors.white, fontSize: 20),
