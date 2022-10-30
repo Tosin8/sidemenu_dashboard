@@ -25,16 +25,15 @@ class _navmenuState extends State<navmenu> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-
                 CircleAvatar(
-                  backgroundImage: NetworkImage('https://unsplash.com/photos/mEZ3PoFGs_k'), 
-
+                  backgroundImage:
+                      NetworkImage('https://unsplash.com/photos/mEZ3PoFGs_k'),
                 ),
-                Text('Britney Spears', style: TextStyle(color: Colors.white, fontSize: 20), 
-                ),  
-
-                Divider(), 
-              
+                Text(
+                  'Britney Spears',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Divider(),
                 Text(
                   'Dashboard',
                   style: TextStyle(color: Colors.white, fontSize: 20),
@@ -59,9 +58,11 @@ class _navmenuState extends State<navmenu> {
                   'Branches',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                SizedBox(height: 8), 
-                Text('Exit', style: TextStyle(color: Colors.white, fontSize: 20), 
-                ), 
+                SizedBox(height: 8),
+                Text(
+                  'Exit',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
               ],
             ),
           ),
