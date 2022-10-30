@@ -29,7 +29,9 @@ class _navmenuState extends State<navmenu> {
                 CircleAvatar(
                   backgroundImage: NetworkImage('https://unsplash.com/photos/mEZ3PoFGs_k'), 
 
-                ), 
+                ),
+                Text('Britney Spears', style: TextStyle(color: Colors.white, fontSize: 20), 
+                ),  
 
                 Divider(), 
               
